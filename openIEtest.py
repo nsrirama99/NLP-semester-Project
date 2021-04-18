@@ -26,17 +26,6 @@ for file in [f for f in os.listdir(path) if f.endswith('.txt')]:
     for triple in triple_corpus:
         print('|-', triple)
     
-for file in[f for f in os.listdir(path) if f.endswith('.pdf')]:
-    text = ''
-    pdfFile = open(os.path.join(path, file), 'rb')
-    pdfReader = pdf.PdfFileReader(pdfFile)
-    for x in range(pdfReader.numPages):
-        pageObj = pdfReader.getPage(x)
-        text += pageObj.extractText()
-    pdfFile.close()
-    
-    text.replace('\n', ' ').replace('\r', '')
-    
 
 print('Text: %s.' % text)
     
