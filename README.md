@@ -6,7 +6,10 @@ This project includes several python scripts that can be utilized in order to cr
 This project utilizes text files as input data. If new test datasets are desired, and they exist in pdf form, you can run the "convert pdf to text.py" file in order to convert the pdf. The final version of this project did not require us to utilize this conversion, so the python script is not fully modular, and may require some editing depending on where the desired pdf file exists on your local machine.
 
 ## Protein Name Recognition
-The initial part of the project exists in the "NLP final Part1.ipynb" file. This notebook contains scripts taht were used to parse a medical text in .json form. This is the main data that was utilized in the project.
+The initial part of the project exists in the "NLP final Part1.ipynb" file. This notebook contains scripts taht were used to parse a medical text in .json form. This is the main data that was utilized in the project. The first part of the program is a copy of the readJson.py file. It transfer the json text into a list. The output save as "paper"
+The secound part of program consist of many regular expressions. Each of them filter out some possible protein names. The added up all the output of the regular expressions is a list called "protein_words". The final output of the protein name before match with protein database is "protein_words_final”.
+The last part of the program is to match the "protein_words_final” with our protein name database. The output of it save into "list2". Then, the next step is to match the words with sentense with "paper" variable. 
+The final output of the progarm saved as a pickle file. 
 
 
 ## Cluster Analysis
