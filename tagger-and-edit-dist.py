@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
-
-This is a temporary script file.
 """
 
 import nltk
@@ -11,6 +8,7 @@ import sys
 from scipy.cluster.hierarchy import dendrogram, linkage
 from sklearn.cluster import AgglomerativeClustering
 from matplotlib import pyplot as plt
+import pickle5 as pickle
 
 test = ["this is a test", "this a test", "is a test", "this is test"]
 
@@ -125,17 +123,20 @@ def clustering(corpus):
 
 if __name__ == "__main__":
     pklFileName = sys.argv[1]
+    f = open(pklFileName, "rb")
+    corp = pickle.load(f)
+    
     #tokens = nltk.word_tokenize(test)
     #posTags = nltk.pos_tag(tokens)
+    print(nltk.pos_tag(nltk.word_tokenize("This is a test made by Lin's students to showcase group tagging")))
+    print(convertSentence("This is a test made by Lin's students to showcase group tagging"))
+
+
+    ret = createDistMatrixOfCorpus(corp)
     
-    #print(posTags)
-    #cum = convertSentence(test)
-    #convent = createCorpus(test)
-    ret = createDistMatrixOfCorpus(test)
-    #cluster = clustering(test)
-    conv = createCorpus(test)
+    conv = createCorpus(corp)
     cluster = linkage(ret)
-    labelList = range(1, len(test)+1)
+    labelList = range(1, len(corp)+1)
     plt.figure(figsize=(10,7))
     dendrogram(cluster,
                orientation='top',
