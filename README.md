@@ -1,4 +1,5 @@
 # NLP-semester-Project
+The goal of this project is to utilize NLP methods to extract protein names from medical texts. The extracted names are then used alongside clustering algorithms to try and intuit some methods for automating the extraction process.
 
 This project includes several python scripts that can be utilized in order to create the results showcased in our presentation and technical report. It also contains some data files that we used in order to conduct our research, including a json file, a pickle file, and the csv file form of the database we utilized. Finally, a paper which we took some inspiration from has been provided with the name "214-215-1-PB.pdf". 
 
